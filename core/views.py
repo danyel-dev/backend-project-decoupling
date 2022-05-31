@@ -14,7 +14,7 @@ class ListViewSet(viewsets.ModelViewSet):
 
 
 class ItemViewSet(viewsets.ModelViewSet):
-    queryset = Item.objects.all()
+    queryset = Item.objects.order_by('-id')
     serializer_class = ItemSerializer
     permission_classes = [permissions.IsAuthenticated]
     authentication_classes = [authentication.TokenAuthentication, authentication.SessionAuthentication]
