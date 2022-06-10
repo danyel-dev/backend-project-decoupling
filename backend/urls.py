@@ -8,7 +8,7 @@ from rest_framework.authtoken import views
 
 
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
+router.register(r'users', UserViewSet, basename='user')
 router.register(r'groups', GroupViewSet)
 router.register(r'list', ListViewSet, basename='list')
 router.register(r'item', ItemViewSet, basename='item')
