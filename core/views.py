@@ -1,3 +1,6 @@
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 from rest_framework import viewsets
 from rest_framework import permissions, authentication
 from .serializers import ListSerializer, ItemSerializer
@@ -18,3 +21,8 @@ class ItemViewSet(viewsets.ModelViewSet):
     serializer_class = ItemSerializer
     permission_classes = [permissions.IsAuthenticated]
     authentication_classes = [authentication.TokenAuthentication, authentication.SessionAuthentication]
+
+
+@api_view()
+def testeAPI(request):
+    return Response('ok')

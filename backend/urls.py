@@ -13,8 +13,10 @@ router.register(r'groups', GroupViewSet)
 router.register(r'list', ListViewSet, basename='list')
 router.register(r'item', ItemViewSet, basename='item')
 
+
 urlpatterns = [
     path('', include(router.urls)),
+    path('core/', include('core.urls')),
     path('api-token-auth/', views.obtain_auth_token, name='api-tokn-auth'),
     path('admin/', admin.site.urls),
 ]
