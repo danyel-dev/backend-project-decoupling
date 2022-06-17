@@ -13,7 +13,7 @@ class ListViewSet(viewsets.ModelViewSet):
     authentication_classes = [authentication.TokenAuthentication, authentication.SessionAuthentication]
 
     def get_queryset(self):
-        return List.objects.filter(user=self.request.user)
+        return List.objects.filter(user=self.request.user).order_by('-id')
 
 
 class ItemViewSet(viewsets.ModelViewSet):
